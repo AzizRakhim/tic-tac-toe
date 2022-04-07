@@ -3,29 +3,33 @@
 let elItem = document.querySelectorAll(".main-box");
 let elCount = 0;
 
-elItem.forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    let elX = item.querySelector(".bx-x");
-    let elCircle = item.querySelector(".bx-circle");
-    if(elCount == 0 && !item.classList.contains("orange")){
-      elX.classList.remove("d-none");
-    }
-    if(elCount == 1 && !item.classList.contains("orange")){
-      elCircle.classList.remove("d-none");
-    } 
+function callBack(){
+  elItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      let elX = item.querySelector(".bx-x");
+      let elCircle = item.querySelector(".bx-circle");
+      if(elCount == 0 && !item.classList.contains("orange")){
+        elX.classList.remove("d-none");
+      }
+      if(elCount == 1 && !item.classList.contains("orange")){
+        elCircle.classList.remove("d-none");
+      } 
+    });
+  
+    item.addEventListener("mouseleave", () => {
+      let elX = item.querySelector(".bx-x");
+      let elCircle = item.querySelector(".bx-circle");
+      if(elCount == 0 && !item.classList.contains("orange")){
+        elX.classList.add("d-none");
+      } 
+      if(elCount == 1 && !item.classList.contains("orange")){
+        elCircle.classList.add("d-none");
+      } 
+    });
   });
+}
 
-  item.addEventListener("mouseleave", () => {
-    let elX = item.querySelector(".bx-x");
-    let elCircle = item.querySelector(".bx-circle");
-    if(elCount == 0 && !item.classList.contains("orange")){
-      elX.classList.add("d-none");
-    } 
-    if(elCount == 1 && !item.classList.contains("orange")){
-      elCircle.classList.add("d-none");
-    } 
-  });
-});
+callBack();
 
 // HOVER SECTION END
 // CLICK SECTION START
@@ -38,6 +42,7 @@ elItem.forEach((item, index) => {
       item.style.background = "#e85737";
       item.classList.add("orange")
       elX.style.display = "block";
+      elX.style.color = "#f4f7f6";
       elCount++;
       elArr[index].name = "x";
       elArr[index].save = true;
@@ -46,6 +51,7 @@ elItem.forEach((item, index) => {
       item.style.background = "#ef9b1e";
       item.classList.add("orange");
       elCircle.style.display = "block";
+      elCircle.style.color = "#f4f7f6";
       elCount--;
       elArr[index].name = "circle";
       elArr[index].save = true;
@@ -127,12 +133,15 @@ elEndBtn.addEventListener("click", () => {
     elCircle.style.display = "none";
     item.style.background = "#5baec0";
     item.classList.remove("orange");
+    elCount = 0;
   });
 
   elArr.forEach((item) => {
     item.name = "";
     item.save = false;
   });
+
+  callBack();
 });
 
 
