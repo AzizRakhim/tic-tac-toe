@@ -352,7 +352,7 @@ template {
 
 body {
   font-family: sans-serif;
-  background-color: #fff;
+  background-color: #f6f6f6;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -361,11 +361,125 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: wrap column;
           flex-flow: wrap column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.main-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-item {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+
+.main-box {
+  width: 100%;
+  height: 100%;
+  background-color: #5baec0;
+  border-radius: 12px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.main-box:hover {
+  background-color: #344051;
+}
+
+.bx-x {
+  color: #f4f7f6;
+  font-size: 100px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.bx-circle {
+  position: absolute;
+  color: #f4f7f6;
+  font-size: 70px;
+}
+
+.end-box {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffffd9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.end-text {
+  font-size: 35px;
+  font-weight: 300;
+  color: #444456;
+}
+
+.end-btn {
+  padding: 10px 35px;
+  border-radius: 7px;
+  border: none;
+  background-color: #303749;
+  color: #ebf0fd;
+  font-size: 17px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.end-btn:hover {
+  background-color: #212532;
+}
+
+.warning {
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b4b3bf;
 }
 /*# sourceMappingURL=main.css.map */
